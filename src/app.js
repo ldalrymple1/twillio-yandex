@@ -36,22 +36,22 @@ class App extends React.Component {
     console.log(this.state.langs, 'laaangs')
     console.log(Object.keys(this.state.langs), 'keys')
     this.setState({ [e.target.name]: e.target.value })
-    Axios.post(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=${process.env.YANDEX_KEY}&${this.state.message}&lang=${this.state.lang}`)
 
     // if that goed well sends textif taht goes well send resposne 
   }
 
-  handleLang(e) {
-    console.log(e.target.value, 'the value')
-    e.target.value 
-  }
+  // handleLang(e) {
+  //   console.log(e.target.value, 'the value')
+  //   e.target.value 
+  // }
   
 
   handleSubmit(e) {
     e.preventDefault()
     console.log('submitted')
-  }
+    Axios.post(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=${process.env.YANDEX_KEY}&${this.state.message}&lang=${this.state.lang}`)
 
+  }
 
   render() {
     console.log(this.state, 'state re-render')
