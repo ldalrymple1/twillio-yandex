@@ -33,11 +33,19 @@ class App extends React.Component {
 
   handleChange(e) {
     console.log(e.target.value)
+    console.log(this.state.langs, 'laaangs')
+    console.log(Object.keys(this.state.langs), 'keys')
     this.setState({ [e.target.name]: e.target.value })
-    // Axios.post('https://translate.yandex.net/api/v1.5/tr.json/translate', this.state.message)
+    Axios.post(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=${process.env.YANDEX_KEY}&${this.state.message}&lang=${this.state.lang}`)
 
     // if that goed well sends textif taht goes well send resposne 
   }
+
+  handleLang(e) {
+    console.log(e.target.value, 'the value')
+    e.target.value 
+  }
+  
 
   handleSubmit(e) {
     e.preventDefault()
@@ -46,8 +54,9 @@ class App extends React.Component {
 
 
   render() {
-    console.log(this.state, 're-render')
-    console.log(Object.keys(this.state.langs))
+    console.log(this.state, 'state re-render')
+    // console.log(Object.keys(this.state.langs))
+    console.log(this.state.langs, 'langs')
     return (
       <>
       <div className="title">
@@ -68,7 +77,7 @@ class App extends React.Component {
                 <select onChange={this.handleChange} name="lang" value={this.state.lang}>
                   <option >Select Language</option>
                   {Object.keys(this.state.langs).map((code, i) => 
-                    <option name="lang" key={i}>{this.state.langs[code]}</option>
+                    <option name="lang" key={i}>{code}</option>
                   )}
                 </select>
               </div>
