@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy|Modak|Rubik+Mono+One&display=swap');
+
+$pinkyred: rgba(247, 20, 96, 0.92);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // background: green;
+  height: 100vh;
+  background: rgb(180, 249, 180);
+}
+
+#root {
+  border: 15px solid rgba(247, 20, 96, 0.92);
+  box-shadow: 1px 2px 5px rgb(2, 2, 2);
+  border-radius: 30px;
+}
+
+form {
+  // background: chartreuse;
+  height: 80%;
+  width: 80vw;
+  margin: 50px 20px;
+}
+
+.title {
+  margin: 50px;
+
+  h1 {
+    text-align: center;
+    font-family: 'Luckiest Guy', cursive;
+    // font-family: 'Rubik Mono One', sans-serif;
+    // font-family: 'Modak', cursive;
+    font-size: 80px;
+    font-weight: 800;
+    color: rgba(247, 20, 96, 0.92);
+    text-shadow: 1px 2px 5px rgb(2, 2, 2);
+
+  }
+}
+
+.dropdown {
+  background: cadetblue;
+}
+
+.input.input.phone-number {
+  width: 350px;
+}
+
+.lower-area {
+  // background: red;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+textarea.textarea {
+  // margin-left: 50px;
+  // margin-right: 50px;
+  // max-width: 100px;
+  border-radius: 30px;
+}
+
+button.button {
+  margin-top: 22px;
+  background-color: $pinkyred;
+  box-shadow: 1px 2px 2px rgb(2, 2, 2);
+
+}
